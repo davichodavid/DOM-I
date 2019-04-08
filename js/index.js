@@ -54,14 +54,37 @@ const ctaButton = document.querySelector(".cta button").textContent = siteConten
 const ctaImg = document.querySelector("#cta-img").src = siteContent.cta["img-src"];
 
 //************* Main Content *****************
-const featuresH4 = document.querySelectorAll(".top-content .text-content h4")[0].textContent = siteContent["main-content"]["features-h4"];
-const featuresContent = document.querySelectorAll("top-content .text-content p")[0].textContent = siteContent["main-content"]["features-content"];
-const aboutH4 = document.querySelectorAll("top-content .text-content h4")[1].textContent = siteContent["main-content"]["about-h4"];
-const aboutContent = document.querySelector("top-content .text-content p")[1].textContent = siteContent["main-content"]["about-content"];
+const featuresH4 = document.querySelectorAll(".top-content h4")[0].textContent = siteContent["main-content"]["features-h4"];
+const featuresContent = document.querySelectorAll(".top-content p")[0].textContent = siteContent["main-content"]["features-content"];
+const aboutH4 = document.querySelectorAll(".top-content h4")[1].textContent = siteContent["main-content"]["about-h4"];
+const aboutContent = document.querySelectorAll(".top-content p")[1].textContent = siteContent["main-content"]["about-content"];
 const middleImgSrc = document.querySelector("#middle-img").src = siteContent["main-content"]["middle-img-src"];
-const servicesH4 = document.querySelectorAll(".bottom-content .text-content h4")[0].textContent = siteContent["main-content"]["services-h4"];
-const servicesContent = document.querySelector(".bottom-content .text-content p")[0].textContent = siteContent["main-content"]["services-content"];
-const productH4 = document.querySelector(".bottom-content .text-content h4")[1].textContent = siteContent["main-content"]["product-h4"];
-const productContent = document.querySelector(".bottom-content .text-content p")[1].textContent = siteContent["main-content"]["product-content"];
-const visionH4 = document.querySelector(".bottom-content .text-content h4")[2].textContent = siteContent["main-content"]["vision-h4"];
-const visionContent = document.querySelector(".bottom-content .text-content p")[2].textContent = siteContent["main-content"]["vision-content"];
+const servicesH4 = document.querySelectorAll(".bottom-content h4")[0].textContent = siteContent["main-content"]["services-h4"];
+const servicesContent = document.querySelectorAll(".bottom-content p")[0].textContent = siteContent["main-content"]["services-content"];
+const productH4 = document.querySelectorAll(".bottom-content h4")[1].textContent = siteContent["main-content"]["product-h4"];
+const productContent = document.querySelectorAll(".bottom-content p")[1].textContent = siteContent["main-content"]["product-content"];
+const visionH4 = document.querySelectorAll(".bottom-content h4")[2].textContent = siteContent["main-content"]["vision-h4"];
+const visionContent = document.querySelectorAll(".bottom-content p")[2].textContent = siteContent["main-content"]["vision-content"];
+
+//************* Contact *****************
+const contact = Array.from(document.querySelectorAll(".contact h4, .contact p"));
+
+contact.map((element, index) => element.textContent = Object.values(siteContent.contact)[index]);
+
+//************* Footer *****************
+const copyright = document.querySelector("footer p").textContent = siteContent.footer["copyright"];
+
+//************* Task 3 *****************
+
+navAs.map(anchor => anchor.style.color = "green");
+
+const nav = document.querySelector("nav");
+
+const firstA = document.createElement("a");
+firstA.textContent = "Content";
+
+const secondA = document.createElement("a");
+secondA.textContent = "Map";
+
+nav.appendChild(firstA);
+nav.prepend(secondA);
